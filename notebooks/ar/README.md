@@ -1,40 +1,40 @@
-# AR 负责人说明
+# AR lead's documentation
 
-这是填写模板；“待填写”不代表已完成实验。统一目标、时间划分、结果格式和 RMSE/MAE 规则见根目录 README。
+This is a template. "To fill in" does not indicate a completed experiment. See the root README for the common target, time splits, result format, and RMSE/MAE rules.
 
-| 项目 | 请负责人填写 |
+| Item | Owner to complete |
 |---|---|
-| 姓名 / GitHub 用户名 | 待填写 |
-| 原始和公共数据版本 | 待填写，例如 raw-v1、processed-v1 |
-| Notebook / 代码入口 | 待填写，由本人创建 |
-| Python 与依赖版本 | 待填写；新增依赖同步 requirements.txt |
-| 运行顺序和命令 | 待填写，包括相对项目根目录的输入输出路径 |
-| 实验编号 run_id | 待填写 |
+| Name / GitHub username | To fill in |
+| Raw and processed data versions | To fill in, e.g. raw-v1 and processed-v1 |
+| Notebook / code entry point | To fill in; create the file yourself |
+| Python and dependency versions | To fill in; add new dependencies to requirements.txt |
+| Execution order and commands | To fill in, including paths relative to the project root |
+| Experiment ID run_id | To fill in |
 
-## 数据和特征
+## Data and features
 
-- 使用的公共字段和特征：待填写。
-- 自己新增的特征、计算公式、滞后和滚动窗口：待填写。
-- 缺失、异常、零成交量的处理：待填写；不覆盖公共数据，不单独删除规定评价样本。
-- 标准化或其他变换：待填写拟合所用训练区间；输出预测需还原为原始对数收益率。
-- 如何保证只使用预测时刻已知的信息：待填写。
+- Shared fields and features used: to fill in.
+- Added features, formulas, lags, and rolling windows: to fill in.
+- Missing values, anomalies, and zero-volume handling: to fill in. Do not overwrite shared data or drop required evaluation rows.
+- Scaling or other transformations: specify the training interval used for fitting. Convert predictions back to unscaled log returns.
+- How future information is excluded: to fill in.
 
-## 最终参数和选择过程
+## Final parameters and selection
 
-滞后阶数、是否含截距、拟合窗口、如何生成 15 分钟预测。
+Lag order, intercept, fitting window, and how fifteen-minute predictions are produced.
 
-| 参数 | 最终值 | 选择理由 / 验证范围 |
+| Parameter | Final value | Selection rationale / validation range |
 |---|---|---|
-| 待填写 | 待填写 | 待填写 |
-| random_state（如适用） | 42 | 全组约定 |
+| To fill in | To fill in | To fill in |
+| random_state, if applicable | 42 | Shared convention |
 
-记录三折训练验证方法、是否早停、参数选择用哪些验证记录；测试标签不用于选参数。测试前按约定重训并冻结，如有历史输入逐步更新，说明如何实现。
+Document the three validation folds, early stopping if used, and which validation records determine parameters. Never select parameters using test labels. Refit and freeze before testing; explain any sequential updates to historical inputs.
 
-## 输出和发现
+## Outputs and findings
 
-- 对外展示的一行成绩：results/ar_metrics.csv，固定三列 model,rmse,mae；只计算整个统一测试期，model 填 AR。
-- 计算用中间文件：results/ar_predictions.csv，固定四列 timestamp,y_true,y_pred,split；保留全部规定预测供 compare.py 核对和重新计算，不作为最终展示表。
-- 最终主表由 compare.py 统一生成：每行一个模型，列为模型、测试期 RMSE、测试期 MAE、RMSE 排名。
-- run_id、生成日期、对应代码提交版本：待填写。
-- 特征或方法扩展：待填写。
-- 主要发现及局限：待填写；正式 RMSE、MAE 和对比图由 compare.py 统一计算。
+- One-row summary: results/ar_metrics.csv; columns model,rmse,mae; cover the entire common test period and set model to AR.
+- Calculation file: results/ar_predictions.csv; columns timestamp,y_true,y_pred,split. Preserve all required predictions for compare.py to verify and recompute; this is not the final presentation table.
+- compare.py produces the final table: one row per model, with test RMSE, test MAE, and RMSE rank.
+- run_id, generation date, and code commit: to fill in.
+- Feature or method extensions: to fill in.
+- Main findings and limitations: to fill in. Official RMSE, MAE, and comparison charts are calculated consistently by compare.py.
