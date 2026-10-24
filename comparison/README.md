@@ -1,8 +1,8 @@
-# 最终比较
+# Final comparison
 
-## 模型评判标准
+## Model evaluation
 
-**以整个测试期的 RMSE 排名，越低越好；MAE 仅作辅助。** 下面的求和覆盖全部测试预测，因此一个模型得到一个 RMSE。
+**Rank models by RMSE over the entire test period; lower is better. MAE is supplementary.** The sum includes every test prediction, giving one score per model.
 
 $$
 \boxed{\displaystyle \mathrm{Score}(m)=\mathrm{RMSE}_m=\sqrt{\frac{1}{N}\sum_{i=1}^{N}(\hat y_i^{(m)}-y_i)^2}}
@@ -12,17 +12,17 @@ $$
 \mathrm{MAE}_m=\frac{1}{N}\sum_{i=1}^{N}\left|\hat y_i^{(m)}-y_i\right|
 $$
 
-N 是测试期预测总数，yᵢ 是真实对数收益率，ŷᵢ⁽ᵐ⁾ 是模型 m 的预测。三个模型使用同一批测试样本；零收益基准始终预测 0。
+N is the number of test predictions, y_i is the true log return, and the hatted value is model m's prediction. All models use the same test samples. The zero-return baseline always predicts 0.
 
-| 模型 | 测试期 RMSE ↓ | 测试期 MAE ↓ | RMSE 排名 |
+| Model | Test RMSE ↓ | Test MAE ↓ | RMSE rank |
 |---|---:|---:|---:|
-| 零收益基准 | 待计算 | 待计算 | 待计算 |
-| AR | 待计算 | 待计算 | 待计算 |
-| Ridge | 待计算 | 待计算 | 待计算 |
-| LightGBM | 待计算 | 待计算 | 待计算 |
+| Zero-return baseline | Pending | Pending | Pending |
+| AR | Pending | Pending | Pending |
+| Ridge | Pending | Pending | Pending |
+| LightGBM | Pending | Pending | Pending |
 
-每行是一种模型在整个测试期的成绩。同分可并列；验证成绩用于选参数，不放入最终主表。
+Each row summarizes one model over the entire test period. Ties may share a rank. Validation results are used to select parameters and are excluded from this final table.
 
-`compare.py` 核对三份预测的日期及真实值，只用 test 行统一计算。保存 `metrics.csv`（model,rmse,mae,rank）和 `metrics.png`（两个指标各一子图）。
+`compare.py` checks dates and true values across the three prediction files and evaluates only test rows. Save `metrics.csv` (model,rmse,mae,rank) and `metrics.png` (one subplot per metric).
 
-比较完成后在此记录：测试起止日期、样本数、数据版本、输入文件、比较日期、结论。再次比较另存日期编号目录。
+After comparison, record the test start/end dates, sample count, data version, input files, comparison date, and conclusions here. Save subsequent runs in a separate dated and numbered folder.
