@@ -1,3 +1,3 @@
-# 模型与预处理器
+# Models and preprocessors
 
-各模型负责人保存训练模型、训练窗口拟合的标准化器及参数配置。记录训练日期、特征组、随机种子和版本。较大二进制文件不直接提交，必要时使用组内共享存储。
+Model leads may save fitted models, scalers fitted on the training window, and parameter settings. Record training dates, feature groups, random seed, and versions. Do not commit large binary files directly; use shared team storage when needed.
