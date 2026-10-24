@@ -1,32 +1,32 @@
-# 数据与特征负责人说明
+# Data and feature lead's documentation
 
-这是填写模板，实际规则和参数由负责人完成后记录。统一目标、日期和时间表规则见根目录 README。
+This is a template. Record the actual methods and settings after completing the work. See the root README for the common target, dates, and evaluation schedule.
 
-| 项目 | 请填写 |
+| Item | To complete |
 |---|---|
-| 姓名 / GitHub 用户名 | 待填写 |
-| 原始文件和版本 | raw-v1；填写来源及文件校验信息 |
-| 处理版本 | processed-v1；生成后填写实际版本 |
-| 代码入口、运行顺序、Python/依赖版本 | 待填写 |
-| 公共数据获取方式 | 待上传；私有网盘链接通过组内分享 |
+| Name / GitHub username | To fill in |
+| Raw file and version | raw-v1; record source and file verification details |
+| Processed version | processed-v1; record the actual published version |
+| Code entry point, execution order, Python/dependency versions | To fill in |
+| Shared data access | Pending upload; share private drive links within the team |
 
-## 清洗和时间
+## Cleaning and timestamps
 
-记录原始 Timestamp 的单位、代表开盘还是收盘、如何转换成 UTC 可用时刻。记录排序、重复时间、缺口、非正价格、异常值、零成交量和缺失值处理；写出处理前后行数和日期范围。不用未来数据填补过去。
+Document the original Timestamp unit, whether it represents bar opening or closing time, and its conversion to UTC data-availability time. Record sorting, duplicate timestamps, gaps, nonpositive prices, anomalies, zero volume, and missing-value handling. Report row counts and time ranges before and after processing. Do not use future information to fill past values.
 
-## 公共特征和目标
+## Shared features and target
 
-列出每个字段的意义、计算公式、窗口、首次可用时刻和预热缺失规则。目标统一为 ln(P[t+15分钟]/P[t])，不能跨缺口直接 shift(-15)。涉及需要拟合的变换，保留给各折训练期拟合，不在全样本预先拟合。
+For every field, record its meaning, formula, window, first available time, and warm-up/missing-value rule. Use ln(P[t+15 minutes]/P[t]); do not apply shift(-15) across gaps. Fit learned transformations separately on each training fold, not on the entire dataset.
 
-## 公共划分与评价时间表
+## Shared splits and evaluation schedule
 
-按根目录约定的 UTC 15 分钟时点、三折验证和测试生成 evaluation_index.csv，字段 timestamp,y_true,split。列出各 split 的样本数、起止时点和排除原因，冻结全组一致的评价样本。训练标签结束时刻必须早于下一评价期起点。
+Generate evaluation_index.csv with timestamp,y_true,split at the UTC fifteen-minute times and validation/test periods in the root README. Record sample counts, start/end times, and exclusion reasons for each split; freeze the same evaluation samples for all models. Training targets must end before the next evaluation period starts.
 
-如需调整公共版本或评价日期，先与三位模型负责人同步并发布新版本；旧版保留。模型负责人不能各自改变真实值或评价样本。
+Coordinate any common-version or evaluation-date changes with all three model leads and publish a new version while retaining the old one. Model leads must not independently alter true values or evaluation samples.
 
-## 必交付
+## Required deliverables
 
-- 自己目录内可运行的 Notebook 或代码及此 README。
-- 网盘中的清洗数据、公共特征及字段说明。
-- 同版本 evaluation_index.csv。
-- 数据版本、生成日期、代码提交版本和变更记录。
+- Runnable Notebook or code in this folder and this README.
+- Cleaned data, shared features, and field documentation on the drive.
+- A matching evaluation_index.csv.
+- Data version, generation date, code commit, and change log.
