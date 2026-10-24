@@ -1,3 +1,3 @@
-# 项目结果
+# Project outputs
 
-按子目录保存模型、预测、表格和图。文件名应包含模型或实验标识，保留特征、参数、数据划分等对应信息。各负责人生成结果，正式发布内容由集成人统一整理。
+Use subfolders for models, predictions, tables, and figures. Include a model or experiment identifier in filenames and retain the corresponding features, parameters, and data-split information. Each owner generates results; the integration lead organizes final deliverables.
