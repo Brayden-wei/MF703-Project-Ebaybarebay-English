@@ -1,3 +1,3 @@
-# 图表
+# Figures
 
-存放数据探索、实际与预测收益或价格、特征重要性、净值和回撤图。图中标明时期、频率、模型、单位和成本假设，供报告与展示使用。
+Store exploratory plots, actual versus predicted returns or prices, feature importance, equity curves, and drawdown plots. Label the period, frequency, model, units, and cost assumptions for reports and presentations.
