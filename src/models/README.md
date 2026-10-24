@@ -1,3 +1,3 @@
-# 模型代码
+# Model code
 
-AR、Ridge、LightGBM 三位负责人各自创建并维护自己的模型文件。包含模型专属预处理、参数选择、训练、预测和保存。输入使用统一公共数据和日期划分；输出统一预测表，y_true 与 y_pred 均为对数收益率。学习型预处理只在各训练窗口拟合。文件命名及接口由组内约定后补充，不预建代码。
+The AR, Ridge, and LightGBM leads create and maintain their own model files, covering model-specific preprocessing, parameter selection, training, prediction, and saving. Use the common data and time splits; output consistent prediction tables with log returns in y_true and y_pred. Fit learned preprocessing only on each training window. Agree filenames and interfaces within the team; no code is pre-created.
