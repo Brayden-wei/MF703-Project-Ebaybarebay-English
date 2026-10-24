@@ -1,7 +1,7 @@
-# 原始数据
+# Raw data
 
-从组内网盘的 raw-v1 下载完整 btcusd_1-min_data.parquet，放在本目录。原始 CSV 转换为 Parquet 后保留 7,206,877 行及六个原始字段，不进行清洗或精度缩减。
+Download the complete btcusd_1-min_data.parquet from raw-v1 on the team drive and place it here. The original CSV-to-Parquet conversion preserved 7,206,877 rows and all six original fields without cleaning or reducing precision.
 
-如组内仍使用旧八分片版本，应完整下载 part-000 至 part-007，按文件名排序合并。完整单文件与分片二选一，不能同时合并读取。读取代码与网盘链接状态见根目录 README。
+If using the older eight-part version, download every part from part-000 through part-007 and concatenate them in filename order. Use either the complete file or the full set of parts; do not combine both. Consult the root README for the shared data link.
 
-后续原始数据通过网盘发布，不新增到 GitHub；已有已跟踪文件不会被 .gitignore 自动移除。原始数据保留原样，清洗和特征交给数据负责人。
+Publish future raw data through the drive, without adding new data to GitHub. Already tracked files are not automatically removed by .gitignore. Preserve raw data unchanged; cleaning and features are the data lead's responsibility.
