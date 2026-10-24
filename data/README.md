@@ -1,3 +1,3 @@
-# 数据目录
+# Data directory
 
-代码由 GitHub 管理，原始和公共处理数据由网盘共享。下载原始版本到本地 raw/，下载统一处理版本到 processed/。下载链接与步骤见根目录 README。由数据负责人发布版本，模型负责人不覆盖公共数据。网盘链接尚待项目负责人提供；已有仓库数据暂作历史副本。
+GitHub manages code; the team drive distributes raw and shared processed data. Download the raw version into raw/ and the common processed version into processed/. See the root README for the download link and steps. The data lead publishes versions; model leads must not overwrite shared data. Existing repository data is retained as a historical copy.
