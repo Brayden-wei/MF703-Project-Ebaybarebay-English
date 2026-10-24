@@ -1,10 +1,10 @@
-# 四位负责人的独立工作区
+# Individual workspaces
 
-| 目录 | 负责人 |
+| Folder | Owner |
 |---|---|
-| data/ | 数据清洗与公共特征 |
-| ar/ | AR |
-| ridge/ | Ridge |
-| lightgbm/ | LightGBM |
+| data/ | Data cleaning and shared features |
+| ar/ | AR lead |
+| ridge/ | Ridge lead |
+| lightgbm/ | LightGBM lead |
 
-每人在自己的文件夹内创建 Notebook 或辅助 Python 文件，并填写 README。无需再复制一套到 src/，也不要求保存模型 pkl。三位模型负责人将最终预测交至 results/，集成人实现根目录 compare.py。统一规则见根目录 README。当前仅创建说明模板，没有模型实现或实验结果。
+Create your Notebook or helper Python files in your own folder and complete its README. You do not need to duplicate code in src/ or save a model pickle file. Model leads submit predictions to results/; the integration lead implements compare.py at the project root. Shared rules are in the root README. These are documentation templates; no model implementations or experiment results are currently provided.
