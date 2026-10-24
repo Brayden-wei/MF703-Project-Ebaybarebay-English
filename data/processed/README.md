@@ -1,5 +1,5 @@
-# 公共处理数据
+# Shared processed data
 
-数据与特征负责人生成清洗数据、公共特征、十五分钟对数收益率目标及时间划分，并在网盘发布 processed-v1。组员下载相同版本到本目录。字段名、类型、时间范围、生成方法、对应 raw 版本和缺失处理规则写进数据说明。
+The data and feature lead generates cleaned data, shared features, fifteen-minute log-return targets, and time splits, and publishes processed-v1 on the team drive. Everyone downloads the same version here. Document field names, types, time range, generation method, corresponding raw version, and missing-value rules.
 
-新版本发布到 processed-v2 等独立文件夹，不覆盖旧版。模型专属变换在各自代码中完成。数据文件不上传 GitHub，本目录保留说明文件。
+Publish new versions in separate folders such as processed-v2; do not overwrite older versions. Implement model-specific transformations in individual model code. Share data through the drive rather than GitHub; keep this folder's documentation.
