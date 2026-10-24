@@ -1,3 +1,3 @@
-# 正式代码
+# Reusable code
 
-存放可复用的数据清洗、公共特征、基准、统一评价和回测代码，由相应负责人自行创建 Python 文件。数据负责人维护清洗、特征与时间对齐；集成人维护统一指标和回测口径。三个模型的专属代码放在 models。不要预先复制未实现的接口。
+Store reusable cleaning, shared-feature, baseline, evaluation, and backtest code. Owners create Python files as needed. The data lead maintains cleaning, features, and timestamp alignment; the integration lead maintains consistent evaluation and backtest rules. Model-specific code belongs in models/. Do not pre-create unimplemented interfaces.
