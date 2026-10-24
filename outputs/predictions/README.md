@@ -1,3 +1,3 @@
-# 样本外预测
+# Out-of-sample predictions
 
-存放基准、AR、Ridge、LightGBM 的验证与最终测试预测。统一字段为 timestamp,target_end,model,y_true,y_pred,split。y_true 和 y_pred 均为十五分钟对数收益率，时间统一 UTC。保持相同评价日期，缺失预测先查原因。
+Store validation and final-test predictions for the baseline, AR, Ridge, and LightGBM. The fields for this legacy folder are timestamp,target_end,model,y_true,y_pred,split. Both y_true and y_pred are fifteen-minute log returns, and times use UTC. Use the same evaluation dates and investigate missing predictions first.
