@@ -1,32 +1,32 @@
-# CSV 提交示例
+# CSV submission examples
 
-### 以 Ridge 为例：交这两份 CSV
+### Ridge example: submit these two CSV files
 
-**① `ridge_metrics.csv`：整个测试期的成绩，只有一行。**
+**1. `ridge_metrics.csv`: one row summarizing the entire test period.**
 
 | model | rmse | mae |
 |---|---:|---:|
 | Ridge | 0.0012 | 0.0008 |
 
-上面数字仅作格式示例。实际填入整个测试期计算出的 RMSE、MAE。
+These numbers illustrate the format only. Replace them with RMSE and MAE calculated over the entire test period.
 
-**② `ridge_predictions.csv`：每次预测的明细，用于核对成绩。**
+**2. `ridge_predictions.csv`: individual predictions for verifying the scores.**
 
 | timestamp | y_true | y_pred | split |
 |---|---:|---:|---|
 | 2024-01-01 00:00 | 0.0010 | 0.0008 | test |
 | 2024-01-01 00:15 | -0.0005 | -0.0002 | test |
 | 2024-01-01 00:30 | 0.0003 | 0.0004 | test |
-| … | … | … | … |
+| ... | ... | ... | ... |
 
-明细数字也仅作格式示例。每十五分钟一行；四列依次是 **UTC 预测时间、真实对数收益率、预测对数收益率、所属阶段**。时间、真实值和阶段由数据负责人提供，你只填写预测值，不删行；收益率保留原始小数精度。
+These prediction values are also illustrative. One row per fifteen minutes; the columns mean **UTC prediction time, true log return, predicted log return, and evaluation split**. The data lead supplies the time, true value, and split. Add your predictions without deleting rows, and preserve numerical precision.
 
-| 你负责的模型 | 需要交的两个文件 |
+| Your model | Required files |
 |---|---|
-| AR | `ar_metrics.csv`、`ar_predictions.csv` |
-| Ridge | `ridge_metrics.csv`、`ridge_predictions.csv` |
-| LightGBM | `lightgbm_metrics.csv`、`lightgbm_predictions.csv` |
+| AR | `ar_metrics.csv`, `ar_predictions.csv` |
+| Ridge | `ridge_metrics.csv`, `ridge_predictions.csv` |
+| LightGBM | `lightgbm_metrics.csv`, `lightgbm_predictions.csv` |
 
-`compare.py` 用明细中 `split=test` 的全部行统一核算，生成前面的四行模型比较表及对比图。验证成绩留作选参数，预测文件过大时走网盘。
+`compare.py` uses all rows marked `split=test` to verify the scores and generate the four-row comparison table and charts. Keep validation results for parameter selection. Share oversized prediction files through the team drive.
 
-最终比较表：零收益基准、AR、Ridge、LightGBM 各一行，列为 model,rmse,mae,rank。
+Final comparison: one row each for the zero-return baseline, AR, Ridge, and LightGBM; columns are model,rmse,mae,rank.
