@@ -4,12 +4,12 @@ See the root README for the common target, dates, and evaluation rules.
 
 | Item | Value |
 |---|---|
-| Name / GitHub username | Heng Zhang / *to fill in* |
+| Name / GitHub username | Heng Zhang / jrmyzh |
 | Raw file and version | `raw-v1`: `btcusd_1-min_data.part-000…007.parquet` (or the single `btcusd_1-min_data.parquet`), 7,206,877 rows, columns `Timestamp, Open, High, Low, Close, Volume` |
 | Processed version | `processed-v1`, generated 2026-11-15 |
 | Code entry point | `notebooks/data/prepare_data.ipynb` (same code as `prepare_data.py`); one step, about one minute |
 | Environment | Python 3.13, pandas 3.0, numpy 2.5, pyarrow 26, matplotlib 3.11. Nothing version-specific is used, so the project's Python 3.11 environment also works |
-| Shared data access | Team drive → `processed-v1/` (*paste the folder link here after uploading*) |
+| Shared data access | Team drive → `processed-v1/` (https://drive.google.com/drive/folders/1zCEZHdP43voXm4Jbdh0d-iKkQcc4g851?usp=drive_link) |
 
 ## How to run
 
@@ -151,7 +151,7 @@ out.to_csv("results/ridge_predictions.csv", index=False, float_format="%.12g")
 
 | Version | Date | Raw version | Change |
 |---|---|---|---|
-| processed-v1 | 2026-11-15 | raw-v1 | First release. Code commit: *fill in after uploading* |
+| processed-v1 | 2026-11-15 | raw-v1 | First release. Code commit: ad7aed8 |
 
 Any change to the evaluation schedule or shared features will be released as `processed-v2`
 after agreeing it with the three model leads; `processed-v1` stays available.
